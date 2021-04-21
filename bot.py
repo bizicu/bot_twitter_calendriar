@@ -64,7 +64,6 @@ def jours_ferie_proche(str=0):
                 d= valeur - date_du_jour
                 return clef ,  d.days
 
-#Fonction pour le tweet qui est pas fini
 def tweeteer(srt=0):
     if srt == 0 :
         tee = pour_le_tweet=jours_ferie_proche()
