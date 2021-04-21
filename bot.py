@@ -1,5 +1,5 @@
 import datetime
-datetime import date
+from datetime import date
 from jours_feries_france import JoursFeries
 import tweepy
 
