@@ -50,7 +50,6 @@ def ferie_months(str=0):
     return index
 def jours_ferie_proche(str=0):
     z=0
-    index=0
     res = JoursFeries.for_year(year)
     for clef,valeur in res.items():
         if date_du_jour.month <= valeur.month: #pour savoir si c'est dans le mois
