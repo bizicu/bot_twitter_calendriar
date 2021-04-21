@@ -36,19 +36,22 @@ def jours_ferie_proche(str=0):
     index=0
     res = JoursFeries.for_year(year)
     for clef,valeur in res.items():
-        if date_du_jour.month <= valeur.month: #pour savoir si c est dans le mois sinon c la galere
-            if date_du_jour.month == valeur.month:
+        if date_du_jour.month <= valeur.month: #pour savoir si c'est dans le mois
+            if date_du_jour.month == valeur.month: 
                 z = valeur.day - date_du_jour.day
-                if z < 0:
+                if z < 0: #vu qu'on voit si c'est dans le mois faut voir si sa n'est pas déjà passer 
                     pass
-                else: #la fonction donne le nombre de jours restant avant le prochain
+                else: #donne le nombre de jour restant avant le prochain jour ferié
                     d= valeur - date_du_jour
                     return print(clef,"dans", d.days,"jours")
             else:
                 d= valeur - date_du_jour
                 return clef ,  d.days
-
+#Fonction pour le tweet qui est pas fini
 def tweeteer(srt=0):
-    tee= pour_le_tweet=jours_ferie_proche()
-    fo="Le prochain jour ferié est le", tee[0] ,"qui sera dans",tee[1],"jours"
-    tweet = api.update_status(fo)
+    if srt == 0 :
+        tee = pour_le_tweet=jours_ferie_proche()
+        a = str(tee[0])        
+        z=str("Le prochain jour ferié est le " + tee[1] + " qui sera dans " + a + " jours")
+        tweet = api.update_status(z)
+
