@@ -82,7 +82,7 @@ def tweeteer(srt=0):
             z=str("Il n'y a pas de jour ferie ce mois ci")
             tweet = api.update_status(z)
         else:
-            a = str(fj)
+            a = str(tee[0])
             z=str("Il y a un jour ferie ce mois si et il est dans "+ a + "jours"+ "et c'est le "+ tee[1])
             tweet = api.update_status(z)
 
