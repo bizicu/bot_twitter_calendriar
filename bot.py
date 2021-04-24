@@ -26,7 +26,7 @@ def ferie_months(str=0):
     for clef,valeur in res.items():
         if date_du_jour.month == valeur.month:
             d= valeur - date_du_jour
-            if date_du_jour.month == 5: #car dans ce moit plusieur jour ferie 
+            if date_du_jour.month == 5: #car dans ce moi plusieurs jours feriés
                 if d.days < 0:
                     index+=1
                     if index == 3:
@@ -43,7 +43,7 @@ def ferie_months(str=0):
                 if d.days >= 0:
                     return d.days , clef
             elif d.days < 0: #pour savoir si il a ete passer
-                return d.days , clef  #ca ete passer
+                return d.days , clef  
             else:
                 return d.days , clef
     index = 87000
