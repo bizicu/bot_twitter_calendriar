@@ -70,12 +70,13 @@ def tweeteer(srt=0):
         a = str(tee[0])        
         z=str("Le prochain jour ferié est le " + tee[1] + " qui sera dans " + a + " jours")
         tweet = api.update_status(z)
+        
     if srt ==  1:
         tee = ferie_months()
         if tee[0]< 0:
             fj = tee[0] *-1
             a = str(fj)
-            z=str("Le jour ferie de ce mois ci est passe depuis plus de " + a+ " jours " + "c'était le "+tee[1])
+            z=str("Le jour ferie de ce mois ci est passe depuis plus de " +  a + " jours " + "c'était le "+ tee[1])
             tweet = api.update_status(z)
         elif tee[0] == 87000:
             z=str("Il n'y a pas de jour ferie ce mois ci")
